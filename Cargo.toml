@@ -1,0 +1,9 @@
+[package]
+name = "non"
+version = "1.0.0"
+edition = "2021"
+readme = "README.md"
+rust-version = "1.78.0"
+homepage = "https://stenstromen.se"
+repository = "https://github.com/stenstromen/non"
+description = "Simple line break and carriage return remover"
