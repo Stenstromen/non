@@ -170,7 +170,7 @@ jobs:
           # typed: false
           # frozen_string_literal: true
           class non < Formula
-            desc "Context switching for Hashicorp Vault with support for multiple vaults and namespaces"
+            desc "Simple line break and carriage return remover"
             homepage "${REPO_URL}"
             version "${VERSIONTAG}"
 
