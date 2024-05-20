@@ -1,5 +1,5 @@
 use std::env;
-use std::io::{ self, Read };
+use std::io::{ self, Read, BufRead };
 
 fn main() {
     let readme: &str =
@@ -30,23 +30,26 @@ Examples:
         return;
     }
 
-    let mut input: String = String::new();
+    let stdin = io::stdin();
+    let handle = stdin.lock();
 
-    match io::stdin().read_to_string(&mut input) {
-        Ok(_) => {
-            let unwrapped: String = if handle_cr {
-                input.replace("\r", "")
-            } else if handle_windows {
-                input.replace("\r\n", "")
-            } else {
-                input.replace("\n", "")
-            };
+    for line in handle.lines() {
+        match line {
+            Ok(input) => {
+                let unwrapped: String = if handle_cr {
+                    input.replace("\r", "")
+                } else if handle_windows {
+                    input.replace("\r\n", "")
+                } else {
+                    input.replace("\n", "")
+                };
 
-            print!("{}", unwrapped);
-        }
-        Err(err) => {
-            eprintln!("Failed to read from stdin: {}", err);
-            println!("{}", readme);
+                print!("{}", unwrapped);
+            }
+            Err(err) => {
+                eprintln!("Failed to read from stdin: {}", err);
+                println!("{}", readme);
+            }
         }
     }
 }
