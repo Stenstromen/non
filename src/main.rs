@@ -1,5 +1,5 @@
 use std::env;
-use std::io::{ self, Read, BufRead };
+use std::io::{ self, BufRead };
 
 fn main() {
     let readme: &str =
