@@ -169,7 +169,7 @@ jobs:
           cat > "${FORMULA_PATH}" << EOF
           # typed: false
           # frozen_string_literal: true
-          class non < Formula
+          class Non < Formula
             desc "Simple line break and carriage return remover"
             homepage "${REPO_URL}"
             version "${VERSIONTAG}"

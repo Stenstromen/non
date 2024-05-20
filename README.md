@@ -1,8 +1,28 @@
 # No\n
 
+![non logo](./non_logo.webp)
+
 ## Description
 
 Simple line break and carriage return remover
+
+## Installation via Homebrew (MacOS/Linux - x86_64/arm64)
+
+```bash
+brew install stenstromen/tap/non
+```
+
+## Download and Run Binary
+
+* For **MacOS** and **Linux**: Checkout and download the latest binary from [Releases page](https://github.com/Stenstromen/non/releases/latest/)
+* For **Windows**: Build the binary yourself.
+
+## Build and Run Binary
+
+```bash
+cargo build --release
+./target/release/non
+```
 
 ## Usage
 
