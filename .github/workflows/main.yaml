@@ -52,7 +52,7 @@ jobs:
           tar -czvf non_${{ matrix.name }}.tar.gz -C ./target/${{ matrix.target }}/release non
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v7
         with:
           name: non_${{ matrix.name }}.tar.gz
           path: non_${{ matrix.name }}.tar.gz
@@ -75,7 +75,7 @@ jobs:
           done
 
       - name: Upload checksum file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v7
         with:
           name: non_${{ env.VERSIONTAG }}_checksums.txt
           path: non_${{ env.VERSIONTAG }}_checksums.txt
